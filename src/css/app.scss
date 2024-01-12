@@ -12,3 +12,24 @@
 .zaui-list-item {
   cursor: pointer;
 }
+.border-bottom-thin {
+  border-bottom-width: 0.5px;
+}
+.gradient-border {
+  position: relative;
+  display: inline-block; /* Makes the div wrap tightly around the content */
+  padding: 2px; /* This will be your border size */
+  border-radius: 9999px; /* This will make it round */
+}
+
+.gradient-border::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  border-radius: inherit; /* Inherits the border-radius from parent */
+  background: linear-gradient(to right, red, yellow); /* Customize your gradient */
+}
