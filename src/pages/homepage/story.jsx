@@ -40,19 +40,19 @@ const Story = () => {
   ];
   return (
     <div className="p-2 flex items-center border-bottom-thin border-gray-400 border-solid">
-      <Swiper slidesPerView={4.5} spaceBetween={0}>
+      <Swiper slidesPerView={4.5} spaceBetween={10}>
         {data.map((item, index) => (
           <SwiperSlide key={index}>
             <Box className="h-[100px]">
-           <div className="gradient-border">
-           <img
-                src={item.src}
-                class="h-[70px] w-[70px] object-cover rounded-full border-2 border-white bg-white"
-              />
-           </div>
-           <Text size="xxSmall" className="text-gray text-center">
-            {item.name}
-          </Text>
+              <div className="gradient-border">
+                <img
+                  src={item.src}
+                  class="h-[70px] w-[70px] object-cover rounded-full border-[3px] border-white bg-white"
+                />
+              </div>
+              <Text size="xxSmall" className="text-gray text-center">
+                {item.name}
+              </Text>
             </Box>
           </SwiperSlide>
         ))}

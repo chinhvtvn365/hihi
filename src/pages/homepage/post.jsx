@@ -16,7 +16,7 @@ const Post = () => {
         <div className="flex flex-row gap-2">
           <img
             src={winterImg}
-            class="h-[50px] w-[50px] object-cover rounded-full"
+            className="h-[50px] w-[50px] object-cover rounded-full"
           />
           <Box flex flexDirection="column" className="justify-center gap-1">
             <div className="flex flex-row gap-1 items-center">
