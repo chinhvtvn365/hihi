@@ -1,18 +1,20 @@
 import React from "react";
-import { List, Page, Icon, Header, useNavigate } from "zmp-ui";
+import { List, Page, Icon, Header, useNavigate, Box } from "zmp-ui";
 import { useRecoilValue } from "recoil";
 import { userState } from "../../state";
 import Welcome from "./welcome";
 import Story from "./story";
 import Post from "./post";
+
 const HomePage = () => {
   const user = useRecoilValue(userState);
   const navigate = useNavigate();
 
   return (
-    <Page className="">
+    <Box className=""> 
       <Welcome />
       <Story />
+      <Post />
       <Post />
       {/* <div className="section-container">
         <UserCard user={user.userInfo} />
@@ -33,7 +35,7 @@ const HomePage = () => {
           </List.Item>
         </List>
       </div> */}
-    </Page>
+    </Box>
   );
 };
 

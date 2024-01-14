@@ -33,3 +33,11 @@
   border-radius: inherit; /* Inherits the border-radius from parent */
   background: linear-gradient(to right, red, yellow); /* Customize your gradient */
 }
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}

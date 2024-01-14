@@ -5,10 +5,14 @@ import HomePage from "../pages/homepage";
 import About from "../pages/about";
 import Form from "../pages/form";
 import User from "../pages/user";
+import Profile from "../pages/profile";
+import CartPage from "../pages/cart";
 const Layout = () => {
   return (
     <AnimationRoutes>
       <Route path="/" element={<HomePage></HomePage>}></Route>
+      <Route path="/profile" element={<Profile></Profile>}></Route>
+      <Route path="/cart" element={<CartPage></CartPage>}></Route>
       <Route path="/about" element={<About></About>}></Route>
       <Route path="/form" element={<Form></Form>}></Route>
       <Route path="/user" element={<User></User>}></Route>
