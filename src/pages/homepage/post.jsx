@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Text } from "zmp-ui";
 import winterImg from "../../static/image/winter.jpg";
+import aespaImg from "../../static/image/aespa.jpg";
 import rectangle from "../../static/image/Rectangle.png";
 import checkIcon from "../../static/icons/OfficialIcon.svg";
 import moreIcon from "../../static/icons/MoreIcon.svg";
@@ -15,7 +16,7 @@ const Post = () => {
       <div className="flex flex-1 justify-between p-3 items-center">
         <div className="flex flex-row gap-2">
           <img
-            src={winterImg}
+            src={aespaImg}
             className="h-[50px] w-[50px] object-cover rounded-full"
           />
           <Box flex flexDirection="column" className="justify-center gap-1">

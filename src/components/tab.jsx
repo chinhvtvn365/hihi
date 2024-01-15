@@ -1,15 +1,17 @@
 import React, { useMemo, useState } from "react";
 import { BottomNavigation, Icon } from "zmp-ui";
 import { useLocation, useNavigate } from "react-router";
+import { BookIcon } from "./icon/book-icon";
 const Tab = () => {
   const tabs = {
     "/": {
       label: "Trang chủ",
       icon: <Icon icon="zi-home" />,
     },
-    "/notification": {
-      label: "Thông báo",
-      icon: <Icon icon="zi-notif" />,
+    "/book1": {
+      label: "Sách",
+      icon: <BookIcon />,
+      activeIcon: <BookIcon active />,
     },
     "/cart": {
       label: "Giỏ hàng",
@@ -24,7 +26,7 @@ const Tab = () => {
   const [activeTab, setActiveTab] = useState("/");
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(activeTab);
+ 
   return (
     <BottomNavigation
       id="footer"

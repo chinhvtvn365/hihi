@@ -1,17 +1,19 @@
 import React from "react";
 import zmpSdk, { login, getUserInfo } from "zmp-sdk";
-import { getAccessToken, requestSendNotification, openPermissionSetting } from "zmp-sdk/apis";
+import {
+  getAccessToken,
+  requestSendNotification,
+  openPermissionSetting,
+} from "zmp-sdk/apis";
 import { Box, Page } from "zmp-ui";
 import { Welcome } from "./welcome";
-
 
 const Profile = () => {
   const test = async () => {
     try {
       const accessToken = await getAccessToken({});
-      console.log(accessToken)
+
     } catch (error) {
-      // xử lý khi gọi api thất bại
       console.log(error);
     }
   };
@@ -19,9 +21,8 @@ const Profile = () => {
   const getUser = async () => {
     try {
       const { userInfo } = await getUserInfo({});
-      console.log(userInfo);
+ 
     } catch (error) {
-      // xử lý khi gọi api thất bại
       console.log(error);
     }
   };
@@ -30,7 +31,6 @@ const Profile = () => {
     try {
       await openPermissionSetting({});
     } catch (error) {
-      // xử lý khi gọi api thất bại
       console.log(error);
     }
   };
@@ -39,11 +39,9 @@ const Profile = () => {
     try {
       const { userInfo } = await getUserInfo({});
 
-      // Tùy chỉnh thông báo ở đây (ví dụ: tiêu đề, nội dung, v.v.)
       const notificationOptions = {
         title: "Thông Báo Mới",
         body: `Xin chào, ${userInfo.name}!`,
-        // Các tùy chọn khác theo yêu cầu
       };
 
       // Gửi thông báo
@@ -53,36 +51,35 @@ const Profile = () => {
     }
   };
   const sendAPINotification = async () => {
-    const url = 'https://openapi.mini.zalo.me/notification/template';
+    const url = "https://openapi.mini.zalo.me/notification/template";
     const headers = {
-      'X-Api-Key': 'Bearer WlCxG_oTkJU2zoH4yvUyCfJ-9qJebBynb_mdG3SuILYiHlgReJ8',
-      'X-User-Id': '8355411204102921681',
-      'X-MiniApp-Id': '417268937671641097',
-      'Content-Type': 'application/json',
+      "X-Api-Key": "Bearer zu79EQSgxZ7tXTyxhYxZDkY5tJsrBUm_xuBKCJGoQ9e9EwuhzZi",
+      "X-User-Id": "2494067826468673860",
+      "X-MiniApp-Id": "2284381959926842107",
+      "Content-Type": "application/json",
     };
     const body = JSON.stringify({
-      "templateId": "00126f321321cce383",
-      "templateData": {
-        "buttonText": "Xem chi tiết đơn hàng",
-        "buttonUrl": "https://zalo.me/s/194839900003483517/",
-        "title": "ZaUI Coffee - Xác nhận đơn hàng",
-        "contentTitle": "Xác nhận đơn hàng",
-        "contentDescription": "Chúng tôi đã nhận yêu cầu đặt hàng từ bạn. Thông tin chi tiết đơn hàng"
-      }
+      templateId: "00126f321321cce383",
+      templateData: {
+        buttonText: "Xem chi tiết đơn hàng",
+        buttonUrl: "https://zalo.me/s/194839900003483517/",
+        title: "ZaUI Coffee - Xác nhận đơn hàng",
+        contentTitle: "Xác nhận đơn hàng",
+        contentDescription:
+          "Chúng tôi đã nhận yêu cầu đặt hàng từ bạn. Thông tin chi tiết đơn hàng",
+      },
     });
 
     try {
       const response = await fetch(url, {
-        method: 'POST',
+        method: "POST",
         headers: headers,
-        body: body
+        body: body,
       });
       const data = await response.json();
       console.log(data);
-      // Xử lý dữ liệu phản hồi ở đây
     } catch (error) {
-      console.error('Lỗi khi gửi thông báo:', error);
-      // Xử lý lỗi ở đây
+      console.error("Lỗi khi gửi thông báo:", error);
     }
   };
 
@@ -99,13 +96,22 @@ const Profile = () => {
                 alt=""
               />
             </div>
-            <button onClick={callAPI} className="mt-10 w-4/5 py-4 rounded-md border-none bg-blue-500 text-white outline-none transition-colors duration-500 ease-in-out hover:bg-blue-300">
+            <button
+              onClick={callAPI}
+              className="mt-10 w-4/5 py-4 rounded-md border-none bg-blue-500 text-white outline-none transition-colors duration-500 ease-in-out hover:bg-blue-300"
+            >
               Mở thông báo
             </button>
-            <button onClick={sendUserNotification} className="mt-10 w-4/5 py-4 rounded-md border-none bg-blue-500 text-white outline-none transition-colors duration-500 ease-in-out hover:bg-blue-300">
+            <button
+              onClick={sendUserNotification}
+              className="mt-10 w-4/5 py-4 rounded-md border-none bg-blue-500 text-white outline-none transition-colors duration-500 ease-in-out hover:bg-blue-300"
+            >
               Gửi thông báo 1
             </button>
-            <button onClick={sendAPINotification} className="mt-10 w-4/5 py-4 rounded-md border-none bg-blue-500 text-white outline-none transition-colors duration-500 ease-in-out hover:bg-blue-300">
+            <button
+              onClick={sendAPINotification}
+              className="mt-10 w-4/5 py-4 rounded-md border-none bg-blue-500 text-white outline-none transition-colors duration-500 ease-in-out hover:bg-blue-300"
+            >
               Gửi thông báo 2
             </button>
           </div>

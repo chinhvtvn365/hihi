@@ -7,7 +7,7 @@ const Login = () => {
   const test = async () => {
     try {
       const accessToken = await getAccessToken({});
-      console.log(accessToken)
+    
     } catch (error) {
       // xử lý khi gọi api thất bại
       console.log(error);

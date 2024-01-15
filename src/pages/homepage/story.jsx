@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import iuImg from "../../static/image/iu.jpg";
 import winterImg from "../../static/image/winter.jpg";
 import exoImg from "../../static/image/EXO_Exodus_logo.png";
+import aespaImg from "../../static/image/aespa.jpg";
 import "swiper/css";
 import "swiper/css/bundle";
 
@@ -11,7 +12,7 @@ const Story = () => {
   const data = [
     {
       name: "Winter",
-      src: winterImg,
+      src: aespaImg,
     },
     {
       name: "IU",
@@ -23,7 +24,7 @@ const Story = () => {
     },
     {
       name: "Winter",
-      src: winterImg,
+      src: aespaImg,
     },
     {
       name: "IU",
@@ -31,7 +32,7 @@ const Story = () => {
     },
     {
       name: "Winter",
-      src: winterImg,
+      src: aespaImg,
     },
     {
       name: "IU",
@@ -47,7 +48,7 @@ const Story = () => {
               <div className="gradient-border">
                 <img
                   src={item.src}
-                  class="h-[70px] w-[70px] object-cover rounded-full border-[3px] border-white bg-white"
+                  className="h-[70px] w-[70px] object-cover rounded-full border-[3px] border-white bg-white"
                 />
               </div>
               <Text size="xxSmall" className="text-gray text-center">
