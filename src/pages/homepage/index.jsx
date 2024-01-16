@@ -11,7 +11,7 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   return (
-    <Box className=""> 
+    <Page className=""> 
       <Welcome />
       <Story />
       <Post />
@@ -35,7 +35,7 @@ const HomePage = () => {
           </List.Item>
         </List>
       </div> */}
-    </Box>
+    </Page>
   );
 };
 

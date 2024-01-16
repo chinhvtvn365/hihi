@@ -27,7 +27,7 @@ export const Categories = () => {
             className="flex flex-col space-y-2 items-center"
           >
             <img className="w-12 h-12" src={category.icon} />
-            <Text size="xxSmall" className="text-gray">
+            <Text size="xxSmall" className="text-gray text-center">
               {category.name}
             </Text>
           </div>

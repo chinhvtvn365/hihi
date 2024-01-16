@@ -1,6 +1,12 @@
 import { atom, selector, selectorFamily } from "recoil";
 import { getUserInfo } from "zmp-sdk";
 import likeIcon from "./static/icons/Like.svg";
+import bookIcon from "./static/icons/book.png";
+import book1Icon from "./static/icons/book1.png";
+import book2Icon from "./static/icons/book2.png";
+import book3Icon from "./static/icons/book3.png";
+import book4Icon from "./static/icons/book4.png";
+import book5Icon from "./static/icons/book5.png";
 import { wait } from "./utils/async";
 export const userState = selector({
   key: "user",
@@ -17,13 +23,13 @@ export const displayNameState = atom({
 export const categoriesState = selector({
   key: "categories",
   get: () => [
-    { id: "coffee", name: "Cà phê", icon: likeIcon },
-    { id: "matcha", name: "Trà xanh", icon: likeIcon },
-    { id: "food", name: "Đồ ăn vặt", icon: likeIcon },
-    { id: "milktea", name: "Trà sữa", icon: likeIcon },
-    { id: "drinks", name: "Giải khát", icon: likeIcon },
-    { id: "bread", name: "Bánh mỳ", icon: likeIcon },
-    { id: "juice", name: "Nước ép", icon: likeIcon },
+    { id: "coffee", name: "Sách viễn tưởng", icon: bookIcon },
+    { id: "matcha", name: "Sách khoa học", icon: book1Icon },
+    { id: "food", name: "Sách thế giới", icon: book2Icon },
+    { id: "milktea", name: "Sách động vật", icon: book3Icon },
+    { id: "drinks", name: "Truyện", icon: book4Icon },
+    { id: "bread", name: "Báo", icon: book5Icon },
+    { id: "juice", name: "Sách giả kim", icon: bookIcon },
   ],
 });
 export const selectedCategoryIdState = atom({

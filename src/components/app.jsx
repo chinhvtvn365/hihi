@@ -8,23 +8,19 @@ import Tab from "./tab";
 const MyApp = () => {
   return (
     <RecoilRoot>
-       <ConfigProvider
+      <ConfigProvider
         cssVariables={{
           "--zmp-primary-color": "#006af5",
           "--zmp-background-color": "#f4f5f6",
         }}
       >
-      <App>
-        <SnackbarProvider>
-          <ZMPRouter>
-          <ScrollRestoration />
-            <Box flexDirection="column" className="h-screen overflow-auto"> 
-            <Layout />
-            <Tab />
-            </Box>
-          </ZMPRouter>
-        </SnackbarProvider>
-      </App>
+        <App>
+          <SnackbarProvider>
+            <ZMPRouter>
+              <Layout />
+            </ZMPRouter>
+          </SnackbarProvider>
+        </App>
       </ConfigProvider>
     </RecoilRoot>
   );

@@ -1,18 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import zmpSdk, { login, getUserInfo } from "zmp-sdk";
 import {
   getAccessToken,
   requestSendNotification,
   openPermissionSetting,
 } from "zmp-sdk/apis";
-import { Box, Page } from "zmp-ui";
+import { Box, Header, Icon, Page, Text } from "zmp-ui";
+import { ListRenderer } from "../../components/list-render";
+import { configView } from "../../utils/device";
 import { Welcome } from "./welcome";
 
 const Profile = () => {
   const test = async () => {
     try {
       const accessToken = await getAccessToken({});
-
     } catch (error) {
       console.log(error);
     }
@@ -21,7 +22,6 @@ const Profile = () => {
   const getUser = async () => {
     try {
       const { userInfo } = await getUserInfo({});
- 
     } catch (error) {
       console.log(error);
     }
@@ -77,45 +77,44 @@ const Profile = () => {
         body: body,
       });
       const data = await response.json();
-      console.log(data);
     } catch (error) {
       console.error("Lỗi khi gửi thông báo:", error);
     }
   };
 
   return (
-    <Page className="flex flex-col justify-between">
-      <Welcome />
-      <Box>
-        <div className="container mx-auto flex justify-center items-center">
-          <div className="form bg-white h-[500px] w-full flex flex-col items-center pt-10">
-            <div className="header">
-              <img
-                className="h-[50px]"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png"
-                alt=""
-              />
-            </div>
-            <button
-              onClick={callAPI}
-              className="mt-10 w-4/5 py-4 rounded-md border-none bg-blue-500 text-white outline-none transition-colors duration-500 ease-in-out hover:bg-blue-300"
-            >
-              Mở thông báo
-            </button>
-            <button
-              onClick={sendUserNotification}
-              className="mt-10 w-4/5 py-4 rounded-md border-none bg-blue-500 text-white outline-none transition-colors duration-500 ease-in-out hover:bg-blue-300"
-            >
-              Gửi thông báo 1
-            </button>
-            <button
-              onClick={sendAPINotification}
-              className="mt-10 w-4/5 py-4 rounded-md border-none bg-blue-500 text-white outline-none transition-colors duration-500 ease-in-out hover:bg-blue-300"
-            >
-              Gửi thông báo 2
-            </button>
-          </div>
-        </div>
+    <Page>
+      <Header title="Cá nhân" showBackIcon={false} />
+      <Box className="m-4">
+        <ListRenderer
+          title="Cá nhân"
+          items={[
+            {
+              left: <Icon icon="zi-user" />,
+              right: (
+                <Box flex>
+                  <Text.Header className="flex-1 items-center font-normal">
+                    Thông tin tài khoản
+                  </Text.Header>
+                  <Icon icon="zi-chevron-right" />
+                </Box>
+              ),
+            },
+            {
+              left: <Icon icon="zi-clock-2" />,
+              right: (
+                <Box flex>
+                  <Text.Header className="flex-1 items-center font-normal">
+                    Lịch sử tìm kiếm
+                  </Text.Header>
+                  <Icon icon="zi-chevron-right" />
+                </Box>
+              ),
+            },
+          ]}
+          renderLeft={(item) => item.left}
+          renderRight={(item) => item.right}
+        />
       </Box>
     </Page>
   );
