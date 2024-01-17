@@ -7,7 +7,6 @@
     "textAlign": "left",
     "statusBarColor": "#1843EF",
     "leftButton": "back",
-    "statusBar": "normal",
     "actionBarHidden": true,
     "hideAndroidBottomNavigationBar": false,
     "hideIOSSafeAreaBottom": false,
