@@ -1,6 +1,6 @@
 import React, { FC, Suspense } from "react";
 import { useRecoilValue } from "recoil";
-
+import { useNavigate } from "react-router-dom";
 import { Box } from "zmp-ui";
 
 import { ProductItemSkeleton } from "../../components/display/skeletons";
@@ -11,7 +11,7 @@ import { ProductItem } from "../../components/display/item";
 
 export const ProductListContent = () => {
   const products = useRecoilValue(productsState);
-
+  const navigate = useNavigate();
   return (
     <Section title="Danh sách sách">
       <Box className="grid grid-cols-2 gap-4">
@@ -30,7 +30,7 @@ export const ProductListFallback = () => {
     <Section title="Danh sách sách">
       <Box className="grid grid-cols-2 gap-4">
         {products.map((_, i) => (
-          <ProductItemSkeleton key={i} />
+          <ProductItemSkeleton  key={i} />
         ))}
       </Box>
     </Section>

@@ -10,23 +10,28 @@ import CartPage from "../pages/cart";
 import Book1 from "../pages/book1";
 import Tab from "./tab";
 import { ScrollRestoration } from "./scroll-restoration";
+import DetailBook from "../pages/detail-book";
 const Layout = () => {
   return (
     <Box flex flexDirection="column" className="h-screen">
-          <ScrollRestoration />
-    <Box className="flex-1 flex flex-col overflow-hidden">
-    <Routes>
-      <Route path="/" element={<HomePage></HomePage>}></Route>
-      <Route path="/profile" element={<Profile></Profile>}></Route>
-      <Route path="/book1" element={<Book1></Book1>}></Route>
-      <Route path="/cart" element={<CartPage></CartPage>}></Route>
-      <Route path="/about" element={<About></About>}></Route>
-      <Route path="/form" element={<Form></Form>}></Route>
-      <Route path="/user" element={<User></User>}></Route>
-      </Routes>
+      <ScrollRestoration />
+      <Box className="flex-1 flex flex-col overflow-hidden">
+        <Routes>
+          <Route path="/" element={<HomePage></HomePage>}></Route>
+          <Route path="/profile" element={<Profile></Profile>}></Route>
+          <Route path="/book1" element={<Book1></Book1>}></Route>
+          <Route
+            path="/detail-book/:productId"
+            element={<DetailBook></DetailBook>}
+          ></Route>
+          <Route path="/cart" element={<CartPage></CartPage>}></Route>
+          <Route path="/about" element={<About></About>}></Route>
+          <Route path="/form" element={<Form></Form>}></Route>
+          <Route path="/user" element={<User></User>}></Route>
+        </Routes>
       </Box>
       <Tab />
-      </Box>
+    </Box>
   );
 };
 
