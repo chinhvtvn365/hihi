@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import zmpSdk, { login, getUserInfo } from "zmp-sdk";
 import {
   getAccessToken,
@@ -9,24 +9,9 @@ import { Box, Header, Icon, Page, Text } from "zmp-ui";
 import { ListRenderer } from "../../components/list-render";
 import { configView } from "../../utils/device";
 import { Welcome } from "./welcome";
-
+import exoImg from "../../static/image/EXO_Exodus_logo.png";
 const Profile = () => {
-  const test = async () => {
-    try {
-      const accessToken = await getAccessToken({});
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const getUser = async () => {
-    try {
-      const { userInfo } = await getUserInfo({});
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
+ 
   const callAPI = async () => {
     try {
       await openPermissionSetting({});
@@ -81,10 +66,43 @@ const Profile = () => {
       console.error("Lỗi khi gửi thông báo:", error);
     }
   };
-
+  const [user, setUser] = useState()
+  const getUser = async () => {
+    try {
+      const { userInfo } = await getUserInfo({});
+      setUser(userInfo)
+      console.log(userInfo);
+    } catch (error) {
+      // xử lý khi gọi api thất bại
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getUser()
+  }, [])
+  console.log(user);
   return (
     <Page>
-      <Header title="Cá nhân" showBackIcon={false} />
+     <Header
+      className="app-header no-border pl-4 flex-none pb-[6px]"
+      showBackIcon={false}
+      title={
+        (
+          <Box flex alignItems="center" className="space-x-2">
+            <img
+              className="w-8 h-8 rounded-lg border-inset"
+              src={user?.avatar}
+            />
+            <Box>
+              <Text.Title size="small">Demo</Text.Title>
+              <Text size="xxSmall" className="text-gray">
+                  Welcome, {user?.name}
+                </Text>
+            </Box>
+          </Box>
+        )
+      }
+    />
       <Box className="m-4">
         <ListRenderer
           title="Cá nhân"

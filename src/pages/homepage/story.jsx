@@ -5,6 +5,7 @@ import iuImg from "../../static/image/iu.jpg";
 import winterImg from "../../static/image/winter.jpg";
 import exoImg from "../../static/image/EXO_Exodus_logo.png";
 import aespaImg from "../../static/image/aespa.jpg";
+import avatarImg from "../../static/image/avatar.jpg";
 import "swiper/css";
 import "swiper/css/bundle";
 
@@ -15,8 +16,8 @@ const Story = () => {
       src: aespaImg,
     },
     {
-      name: "IU",
-      src: iuImg,
+      name: "Avatar",
+      src: avatarImg,
     },
     {
       name: "EXO",
@@ -27,16 +28,16 @@ const Story = () => {
       src: aespaImg,
     },
     {
-      name: "IU",
-      src: iuImg,
+      name: "Avatar",
+      src: avatarImg,
     },
     {
       name: "Winter",
       src: aespaImg,
     },
     {
-      name: "IU",
-      src: iuImg,
+      name: "Avatar",
+      src: avatarImg,
     },
   ];
   return (
