@@ -8,11 +8,11 @@ const Tab = () => {
       label: "Trang chủ",
       icon: <Icon icon="zi-home" />,
     },
-    "/book1": {
-      label: "Sách",
-      icon: <BookIcon />,
-      activeIcon: <BookIcon active />,
-    },
+    // "/book1": {
+    //   label: "Sách",
+    //   icon: <BookIcon />,
+    //   activeIcon: <BookIcon active />,
+    // },
     "/cart": {
       label: "Giỏ hàng",
       icon: <Icon icon="zi-calendar" />,
