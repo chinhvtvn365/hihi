@@ -17,16 +17,18 @@ const hi = (a) =>{
     <Page className="flex flex-col">
     <Header title="Bản đồ số tỉnh Hậu Giang" />
     <Tabs id="contact-list" defaultActiveKey="1" onChange={(activeKey) => hi(activeKey)}>
-        <Tabs.Tab key="1" label="Tab 1">
-        <GoogleMaps />
+        <Tabs.Tab key="1" label="Y tế">
         </Tabs.Tab> 
-        <Tabs.Tab key="2" label="Tab 2">
-          Tab 2 content
+        <Tabs.Tab key="2" label="Du lịch">
+         
         </Tabs.Tab>
-        <Tabs.Tab key="3" label="Tab 3">
-          Tab 3 content
+        <Tabs.Tab key="3" label="Giáo dục">
+       
         </Tabs.Tab>
       </Tabs>
+      <div className="flex-1">
+    <GoogleMaps />
+    </div>
   </Page>
   )
 }
