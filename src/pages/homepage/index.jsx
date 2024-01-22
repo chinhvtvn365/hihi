@@ -12,7 +12,6 @@ import { ProductList } from "../book1/product-list";
 const HomePage = () => {
   const user = useRecoilValue(userState);
   const navigate = useNavigate();
-
   return (
     <Page className="flex flex-col">
     {/* <Header title="Sách" showBackIcon={false} /> */}

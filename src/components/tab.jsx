@@ -13,6 +13,10 @@ const Tab = () => {
     //   icon: <BookIcon />,
     //   activeIcon: <BookIcon active />,
     // },
+    "/map": {
+      label: "Bản đồ",
+      icon: <Icon icon="zi-location" />,
+    },
     "/cart": {
       label: "Giỏ hàng",
       icon: <Icon icon="zi-calendar" />,
@@ -22,7 +26,6 @@ const Tab = () => {
       icon: <Icon icon="zi-user" />,
     },
   };
-
   const [activeTab, setActiveTab] = useState("/");
   const navigate = useNavigate();
   const location = useLocation();
