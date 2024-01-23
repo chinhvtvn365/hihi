@@ -5,7 +5,7 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { useNavigate } from "react-router";
 import { categoriesState, selectedCategoryIdState } from "../../state";
 
-export const Categories = () => {
+export const Categories = ({ title }) => {
   const categories = useRecoilValue(categoriesState);
 
   const navigate = useNavigate();
@@ -13,12 +13,12 @@ export const Categories = () => {
 
   const gotoCategory = (categoryId) => {
     setSelectedCategoryId(categoryId);
-    navigate("/category");
+    navigate("/list-book/25");
   };
 
   return (
     <Box className="bg-white p-4 space-y-4">
-      <Text.Title>Thể loại sách</Text.Title>
+      <Text.Title>{title}</Text.Title>
       <Box className="grid grid-cols-4 gap-4">
         {categories.map((category, i) => (
           <div

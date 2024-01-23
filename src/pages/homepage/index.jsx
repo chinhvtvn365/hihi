@@ -17,7 +17,11 @@ const HomePage = () => {
     {/* <Header title="Sách" showBackIcon={false} /> */}
     <Divider />
     <Suspense>
-      <Categories />
+      <Categories title="Nhà Sách Quang Huy"/>
+    </Suspense>
+    <Divider />
+    <Suspense>
+      <Categories title="Nhà Sách Ngọc Hưng"/>
     </Suspense>
     <Divider />
     <ProductList />

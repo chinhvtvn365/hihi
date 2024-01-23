@@ -13,7 +13,7 @@ export const ProductListContent = () => {
   const products = useRecoilValue(productsState);
   const navigate = useNavigate();
   return (
-    <Section title="Danh sách sách">
+    <Section title="Sách mới">
       <Box className="grid grid-cols-2 gap-4">
         {products.map((product, i) => (
           <ProductItem product={product} key={i} />
@@ -27,7 +27,7 @@ export const ProductListFallback = () => {
   const products = [...new Array(12)];
 
   return (
-    <Section title="Danh sách sách">
+    <Section title="Sách mới">
       <Box className="grid grid-cols-2 gap-4">
         {products.map((_, i) => (
           <ProductItemSkeleton  key={i} />

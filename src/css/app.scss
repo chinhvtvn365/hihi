@@ -6,7 +6,11 @@ body {
 .zaui-routes {
   height: 100%;
 }
-
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; 
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
 .zaui-page {
   min-height: unset;
 }
