@@ -13,6 +13,7 @@ import { ScrollRestoration } from "./scroll-restoration";
 import DetailBook from "../pages/detail-book";
 import Map from "../pages/map";
 import ListBook from "../pages/list-book";
+import MapForm from "../pages/mapForm";
 const Layout = () => {
   return (
     <Box flex flexDirection="column" className="h-screen">
@@ -29,6 +30,10 @@ const Layout = () => {
             <Route
             path="/list-book/:listId"
             element={<ListBook></ListBook>}
+          ></Route>
+                      <Route
+            path="/map-form"
+            element={<MapForm></MapForm>}
           ></Route>
              <Route path="/map" element={<Map></Map>}></Route>
           <Route path="/cart" element={<CartPage></CartPage>}></Route>
